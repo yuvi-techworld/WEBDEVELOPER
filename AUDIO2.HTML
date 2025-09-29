@@ -1,0 +1,256 @@
+<!doctype html>
+<html lang="hi">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Professional Media Embed — Demo</title>
+  <style>
+    :root{--bg:#0f1724;--card:#0b1220;--accent:#1e90ff;--muted:#9aa4b2;--glass: rgba(255,255,255,0.04)}
+    *{box-sizing:border-box}
+    body{margin:0;font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial; background:linear-gradient(180deg,#071428 0%, #071e2b 100%);color:#e6eef6;min-height:100vh;display:flex;align-items:center;justify-content:center;padding:32px}
+    .wrap{max-width:980px;width:100%;}
+    header{display:flex;align-items:center;justify-content:space-between;margin-bottom:18px}
+    h1{font-size:20px;margin:0}
+    p.lead{margin:6px 0 0;color:var(--muted);font-size:13px}
+
+    .grid{display:grid;grid-template-columns:1fr;gap:18px}
+    @media(min-width:880px){.grid{grid-template-columns: 1fr 360px}}
+
+    .card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));border-radius:12px;padding:16px;box-shadow:0 6px 18px rgba(2,6,23,0.6);border:1px solid rgba(255,255,255,0.03)}
+
+    /* Image area */
+    .image-preview{width:100%;height:220px;display:flex;align-items:center;justify-content:center;border-radius:10px;overflow:hidden;background:var(--glass);border:1px dashed rgba(255,255,255,0.03)}
+    .image-preview img{max-width:100%;max-height:100%;object-fit:cover}
+
+    /* Video */
+    video{width:100%;height:auto;border-radius:8px;border:1px solid rgba(255,255,255,0.04)}
+
+    /* Controls */
+    .controls{display:flex;gap:8px;align-items:center;margin-top:8px}
+    .btn{background:transparent;border:1px solid rgba(255,255,255,0.06);padding:8px 12px;border-radius:8px;color:inherit;cursor:pointer}
+    .btn:active{transform:translateY(1px)}
+    .range{appearance:none;height:6px;border-radius:6px;background:linear-gradient(90deg,var(--accent),rgba(255,255,255,0.06));width:100%}
+    .small{font-size:13px;color:var(--muted)}
+
+    /* Right column */
+    .meta h3{margin:0 0 6px 0}
+    .meta p{margin:0 0 12px 0;color:var(--muted)}
+    .field{display:flex;flex-direction:column;gap:6px;margin-bottom:10px}
+    .input{background:transparent;border:1px solid rgba(255,255,255,0.04);padding:10px;border-radius:8px;color:inherit}
+    .link-block{display:flex;gap:8px}
+    .footer{display:flex;justify-content:space-between;align-items:center;margin-top:12px}
+    a.cta{background:var(--accent);color:#042635;padding:8px 12px;border-radius:8px;text-decoration:none;font-weight:600}
+
+    /* small helpers */
+    .muted{color:var(--muted);font-size:13px}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div>
+        <h1>Media Embed — Professional Demo</h1>
+        <p class="lead">Aap is template mein audio, photo, video add kar sakte ho. (Links placeholders — aap change kar dena)</p>
+      </div>
+      <div class="muted">Made for: Yuvraj — edit freely</div>
+    </header>
+
+    <div class="grid">
+      <section class="card">
+        <!-- Image -->
+        <div class="image-preview" id="imgPreview">
+          <img id="mainImage" src="get it.jpg"Preview" />
+        </div>
+        <div style="display:flex;gap:10px;margin-top:10px;align-items:center">
+          <input id="imgInput" class="input" placeholder="Image URL (paste here)" />
+          <button class="btn" id="imgLoad">Load</button>
+        </div>
+
+        <!-- Audio -->
+        <div style="margin-top:14px">
+          <h3 style="margin:0 0 8px 0">Audio</h3>
+          <audio id="audioPlayer" controls preload="none">
+            <source src="Bhole Ka Pujari-Downringtone.com.mp3"audio/mpeg">
+            Your browser does not support the audio element.
+          </audio>
+          <div class="controls">
+            <button class="btn" id="audioPlay">Play</button>
+            <button class="btn" id="audioPause">Pause</button>
+            <div style="flex:1">
+              <input id="audioSeek" type="range" min="0" max="100" value="0" class="range" />
+            </div>
+            <div class="small" id="audioTime">0:00 / 0:00</div>
+          </div>
+        </div>
+
+        <!-- Video -->
+        <div style="margin-top:14px">
+          <h3 style="margin:0 0 8px 0">Video</h3>
+          <video id="videoPlayer" controls preload="metadata" poster="https://via.placeholder.com/800x450?text=Video+Poster">
+            <source src="WIN_20250603_21_26_47_Pro.mp4"video/mp4">
+            Browser does not support video.
+          </video>
+          <div class="controls">
+            <button class="btn" id="videoPlay">Play</button>
+            <button class="btn" id="videoPause">Pause</button>
+            <button class="btn" id="videoMute">Mute</button>
+            <div style="flex:1">
+              <input id="videoSeek" type="range" min="0" max="100" value="0" class="range" />
+            </div>
+            <div class="small" id="videoTime">0:00 / 0:00</div>
+          </div>
+        </div>
+
+      </section>
+
+      <aside class="card meta">
+        <h3>Settings & Link</h3>
+        <p class="muted">Yahan se aap media URLs aur share link change kar sakte hain.</p>
+
+        <div class="field">
+          <label class="small">Audio URL</label>
+          <input id="audioURL" class="input" value="https://www.w3schools.com/html/horse.mp3" />
+        </div>
+
+        <div class="field">
+          <label class="small">Video URL</label>
+          <input id="videoURL" class="input" value="https://www.w3schools.com/html/mov_bbb.mp4" />
+        </div>
+
+        <div class="field">
+          <label class="small">Video Poster (Image)</label>
+          <input id="videoPoster" class="input" value="https://via.placeholder.com/800x450?text=Video+Poster" />
+        </div>
+
+        <div class="field">
+          <label class="small">Share Link (placeholder) — change kar dena</label>
+          <div class="link-block">
+            <input id="shareLink" class="input" value="https://example.com/your-page" />
+            <a id="openLink" class="cta" href="https://example.com/your-page" target="_blank">Open</a>
+          </div>
+        </div>
+
+        <div style="margin-top:6px" class="muted">Tip: URLs paste karne ke baad "Apply" dabao.</div>
+        <div style="display:flex;gap:8px;margin-top:10px">
+          <button class="btn" id="applyBtn">Apply</button>
+          <button class="btn" id="resetBtn">Reset</button>
+        </div>
+
+        <div class="footer">
+          <div class="small">Status: <span id="status">Ready</span></div>
+          <div class="small">Format: mp3, mp4, jpg, png, webm supported</div>
+        </div>
+      </aside>
+    </div>
+  </div>
+
+  <script>
+    // helpers
+    const $ = id => document.getElementById(id);
+
+    // Image
+    $('imgLoad').addEventListener('click', ()=>{
+      const url = $('imgInput').value.trim();
+      if(url) { $('mainImage').src = url; $('status').innerText = 'Image updated'; }
+    });
+
+    // Audio
+    const audio = $('audioPlayer');
+    const audioURL = $('audioURL');
+    const audioSeek = $('audioSeek');
+    const audioPlay = $('audioPlay');
+    const audioPause = $('audioPause');
+    const audioTime = $('audioTime');
+
+    audioPlay.addEventListener('click', ()=>audio.play());
+    audioPause.addEventListener('click', ()=>audio.pause());
+
+    audio.addEventListener('timeupdate', ()=>{
+      if(audio.duration){
+        const p = (audio.currentTime/audio.duration)*100;
+        audioSeek.value = p;
+        audioTime.innerText = niceTime(audio.currentTime)+ ' / ' + niceTime(audio.duration);
+      }
+    });
+    audioSeek.addEventListener('input', ()=>{
+      if(audio.duration) audio.currentTime = (audioSeek.value/100)*audio.duration;
+    });
+
+    // Video
+    const video = $('videoPlayer');
+    const videoSeek = $('videoSeek');
+    const videoPlay = $('videoPlay');
+    const videoPause = $('videoPause');
+    const videoMute = $('videoMute');
+    const videoTime = $('videoTime');
+
+    videoPlay.addEventListener('click', ()=>video.play());
+    videoPause.addEventListener('click', ()=>video.pause());
+    videoMute.addEventListener('click', ()=>{ video.muted = !video.muted; videoMute.innerText = video.muted? 'Unmute' : 'Mute'; });
+
+    video.addEventListener('timeupdate', ()=>{
+      if(video.duration){
+        const p = (video.currentTime/video.duration)*100;
+        videoSeek.value = p;
+        videoTime.innerText = niceTime(video.currentTime)+ ' / ' + niceTime(video.duration);
+      }
+    });
+    videoSeek.addEventListener('input', ()=>{
+      if(video.duration) video.currentTime = (videoSeek.value/100)*video.duration;
+    });
+
+    // Apply / Reset
+    $('applyBtn').addEventListener('click', ()=>{
+      // apply audio
+      const aurl = audioURL.value.trim();
+      if(aurl){
+        audio.querySelector('source').src = aurl;
+        audio.load();
+      }
+      // apply video
+      const vurl = $('videoURL').value.trim();
+      const vposter = $('videoPoster').value.trim();
+      if(vurl){
+        video.querySelector('source').src = vurl; video.load();
+      }
+      if(vposter) video.poster = vposter;
+      // share link
+      const link = $('shareLink').value.trim();
+      $('openLink').href = link; $('openLink').innerText = 'Open';
+
+      $('status').innerText = 'Applied';
+    });
+
+    $('resetBtn').addEventListener('click', ()=>{
+      // reset to defaults (minimal)
+      $('audioURL').value = 'https://www.w3schools.com/html/horse.mp3';
+      $('videoURL').value = 'https://www.w3schools.com/html/mov_bbb.mp4';
+      $('videoPoster').value = 'https://via.placeholder.com/800x450?text=Video+Poster';
+      $('shareLink').value = 'https://example.com/your-page';
+      $('mainImage').src = 'https://via.placeholder.com/800x450?text=Your+Photo+Here';
+      $('openLink').href = $('shareLink').value;
+      audio.querySelector('source').src = $('audioURL').value; audio.load();
+      video.querySelector('source').src = $('videoURL').value; video.poster = $('videoPoster').value; video.load();
+      $('status').innerText = 'Reset to defaults';
+    });
+
+    function niceTime(sec){
+      if(!sec || isNaN(sec)) return '0:00';
+      const s = Math.floor(sec%60).toString().padStart(2,'0');
+      const m = Math.floor(sec/60).toString();
+      return m + ':' + s;
+    }
+
+    // Initialize small UI states
+    window.addEventListener('load', ()=>{
+      // make sure times reflect loaded metadata
+      audio.addEventListener('loadedmetadata', ()=>{
+        audioTime.innerText = niceTime(audio.currentTime)+' / '+niceTime(audio.duration || 0);
+      });
+      video.addEventListener('loadedmetadata', ()=>{
+        videoTime.innerText = niceTime(video.currentTime)+' / '+niceTime(video.duration || 0);
+      });
+    });
+  </script>
+</body>
+</html>

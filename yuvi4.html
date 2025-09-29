@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>News Article</title>
+  <style>
+    /* Very simple, plain newspaper-like look */
+    body {
+      margin: 20px;
+      font-family: "Times New Roman", Georgia, serif;
+      background: #ffffff;
+      color: #111;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    h1.headline {
+      font-size: 28px;
+      line-height: 1.05;
+      margin: 0 0 12px 0;
+      text-transform: uppercase;
+      font-weight: 700;
+      text-decoration: underline;
+      text-underline-offset: 6px;
+      letter-spacing: 0.6px;
+    }
+
+    .meta {
+      font-size: 13px;
+      margin-bottom: 14px;
+      color: #333;
+    }
+
+    .article {
+      display: block;
+      font-size: 14px;
+      line-height: 1.6;
+      color: #222;
+    }
+
+    .article img {
+      max-width: 420px;
+      width: 100%;
+      height: auto;
+      float: right;
+      margin: 0 0 10px 20px;
+      border: 1px solid #ccc;
+    }
+
+    /* Clear fix after floats */
+    .clearfix::after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+
+    /* Keep layout very plain on small screens */
+    @media (max-width: 700px) {
+      .article img { float: none; display: block; margin: 10px auto; max-width: 100%; }
+      h1.headline { font-size: 22px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1 class="headline">Trump’s H-1B visa fee hike to backfire? Wall Street banks set to rely more on Indian GCCs; may deepen presence in India</h1>
+    <h2 class="sub-headline">US President Donald Trump’s move to steeply hike the H-1B visa fees to $100,000 in a bid to create more jobs for Americans may actually end up backfiring! Major Wall Street banks are actually expected to increase their dependence on business support centres in India after Trump’s fee hike for new H-1B visa applications.
+Despite Trump's intention to safeguard American employment through immigration restrictions, analysts suggest these new regulations might encourage banks to strengthen their presence in Indian technology centres like Mumbai, Bengaluru and Hyderabad, which currently provide employment to over 1.9 million individuals.</h2>
+    <div class="meta">By Shah Staff of Times Of India  — Sep 22, 2025</div>
+
+    <article class="article clearfix">
+      <!-- Save your image in the same folder as this HTML file with the name

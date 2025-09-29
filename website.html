@@ -1,0 +1,229 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>ShopEase — Simple E-commerce (HTML only)</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+</head>
+<body>
+
+  <!-- Header with navigation -->
+  <header>
+    <h1>ShopEase</h1>
+    <p><em>Your friendly HTML-only demo store</em></p>
+
+    <nav>
+      <!-- Anchor links to sections -->
+      <a href="#home">Home</a> |
+      <a href="#products">Products</a> |
+      <a href="#about">About</a> |
+      <a href="#media">Media</a> |
+      <a href="#contact">Contact</a>
+    </nav>
+    <hr />
+  </header>
+
+  <!-- Home Section -->
+  <section id="home">
+    <h2>Welcome to <strong>ShopEase</strong></h2>
+    <p>
+      At <strong>ShopEase</strong> we offer a small curated selection of items.
+      Browse our <a href="#products">products</a>, watch a demo video below,
+      or listen to our store jingle in the <a href="#media">media</a> section.
+    </p>
+
+    <h3>Highlights</h3>
+    <ul>
+      <li><strong>Fast delivery</strong> — across many cities.</li>
+      <li><em>Secure checkout</em> — we care about your privacy.</li>
+      <li><mark>Special offers</mark> — seasonal discounts available.</li>
+    </ul>
+  </section>
+
+  <hr />
+
+  <!-- Products Section -->
+  <section id="products">
+    <h2>Products</h2>
+
+    <!-- Example product list using ordered list -->
+    <ol>
+      <li>
+        <article>
+          <h3>Classic Headphones — ₹1,999</h3>
+          <figure>
+            <!-- placeholder image; replace URL with your product image -->
+            <img src="https://via.placeholder.com/300x200?text=Headphones" alt="Classic Headphones" width="300" height="200">
+            <figcaption>Comfort-fit over-ear headphones</figcaption>
+          </figure>
+
+          <!-- Descriptive text with formatting -->
+          <p>
+            Experience clear sound with <strong>active bass</strong> and an
+            ergonomic design. <small>1-year warranty included.</small>
+          </p>
+
+          <!-- Features as unordered list -->
+          <ul>
+            <li>Bluetooth 5.2</li>
+            <li>20 hours battery life</li>
+            <li>Built-in mic for calls</li>
+          </ul>
+
+          <p>
+            <a href="#contact">Buy now</a> or
+            <a href="mailto:orders@shopease.example?subject=Order%20Headphones">email us</a>
+            for bulk orders.
+          </p>
+        </article>
+      </li>
+
+      <li>
+        <article>
+          <h3>Urban Backpack — ₹2,499</h3>
+          <figure>
+            <img src="https://via.placeholder.com/300x200?text=Backpack" alt="Urban Backpack" width="300" height="200">
+            <figcaption>Water-resistant commuter backpack</figcaption>
+          </figure>
+
+          <p>
+            Stylish <em>and</em> functional — padded laptop sleeve fits up to 15".
+            <time datetime="2025-09-29">Updated: Sep 29, 2025</time>
+          </p>
+
+          <ul>
+            <li>Multiple compartments</li>
+            <li>USB charging port (power bank not included)</li>
+            <li>Reflective strips for night safety</li>
+          </ul>
+
+          <p>
+            <a href="#contact">Order this backpack</a> or check its
+            <a href="#products">other variants</a>.
+          </p>
+        </article>
+      </li>
+
+      <li>
+        <article>
+          <h3>Smartwatch Lite — ₹3,199</h3>
+          <figure>
+            <img src="https://via.placeholder.com/300x200?text=Smartwatch" alt="Smartwatch Lite" width="300" height="200">
+            <figcaption>Fitness tracking and notifications</figcaption>
+          </figure>
+
+          <p>
+            Track steps, heart rate and get notifications. Comes with multiple
+            watch faces. <strong>Water-resistant</strong>.
+          </p>
+
+          <details>
+            <summary>More specs</summary>
+            <ul>
+              <li>Battery: up to 7 days</li>
+              <li>Compatibility: iOS & Android</li>
+              <li>Sensors: HR, accelerometer</li>
+            </ul>
+          </details>
+
+          <p><a href="tel:+911234567890">Call us</a> to confirm stock availability.</p>
+        </article>
+      </li>
+    </ol>
+  </section>
+
+  <hr />
+
+  <!-- About Section -->
+  <section id="about">
+    <h2>About ShopEase</h2>
+    <p>
+      <strong>Mission:</strong> To make online shopping simple and accessible.
+      <br />
+      <strong>Vision:</strong> Small store, big heart.
+    </p>
+
+    <h4>Our Policies (short)</h4>
+    <ul>
+      <li>30-day returns.</li>
+      <li>Secure payments.</li>
+      <li>Support via email and phone.</li>
+    </ul>
+
+    <p>
+      Learn more on our <a href="https://example.com/terms" target="_blank" rel="noopener noreferrer">terms page</a>.
+      (External link opens in a new tab.)
+    </p>
+  </section>
+
+  <hr />
+
+  <!-- Media Section with audio and video -->
+  <section id="media">
+    <h2>Media</h2>
+
+    <h3>Store Jingle (Audio)</h3>
+    <p>Press play to listen to our short jingle.</p>
+    <!-- audio element with controls -->
+    <audio controls preload="none">
+      <!-- example audio file hosted by w3schools for demos -->
+      <source src="https://www.w3schools.com/html/horse.mp3" type="audio/mpeg">
+      Your browser does not support the audio element.
+    </audio>
+
+    <h3>Product Demo (Video)</h3>
+    <p>Watch a short product demo below (sample video).</p>
+    <!-- video element with controls -->
+    <video controls width="480" height="270">
+      <!-- example video hosted by w3schools for demos -->
+      <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+  </section>
+
+  <hr />
+
+  <!-- Contact / Footer -->
+  <section id="contact">
+    <h2>Contact & Support</h2>
+
+    <p>
+      <strong>Email:</strong>
+      <a href="mailto:support@shopease.example">support@shopease.example</a>
+    </p>
+    <p><strong>Phone:</strong> <a href="tel:+911234567890">+91 12 3456 7890</a></p>
+
+    <h4>Follow Us</h4>
+    <ul>
+      <li><a href="https://facebook.com" target="_blank" rel="noopener noreferrer">Facebook</a></li>
+      <li><a href="https://instagram.com" target="_blank" rel="noopener noreferrer">Instagram</a></li>
+      <li><a href="https://twitter.com" target="_blank" rel="noopener noreferrer">Twitter</a></li>
+    </ul>
+
+    <p>
+      <small>© <time datetime="2025">2025</time> ShopEase. All rights reserved.</small>
+    </p>
+  </section>
+
+  <hr />
+
+  <!-- Simple site map using definition list (extra demonstration of HTML listing) -->
+  <section>
+    <h2>Site Map</h2>
+    <dl>
+      <dt>Home</dt>
+      <dd><a href="#home">Intro and highlights</a></dd>
+
+      <dt>Products</dt>
+      <dd><a href="#products">Full product listing</a></dd>
+
+      <dt>Media</dt>
+      <dd><a href="#media">Audio & video demos</a></dd>
+
+      <dt>Contact</dt>
+      <dd><a href="#contact">Get in touch</a></dd>
+    </dl>
+  </section>
+
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Media Tags Example</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background: #f9f9f9;
+        }
+        h1 {
+            color: darkblue;
+        }
+        .media-section {
+            margin-bottom: 40px;
+        }
+        video, audio, img {
+            display: block;
+            margin-top: 10px;
+            border: 2px solid #ccc;
+            border-radius: 10px;
+            padding: 5px;
+            background: #fff;
+        }
+    </style>
+</head>
+<body>
+    <h1>Media Tags in HTML</h1>
+
+    <!-- Image Example -->
+    <div class="media-section">
+        <h2>Image</h2>
+        <img src="get it.jpg"Sample Image" width="300" height="200">
+        <p>This is an image displayed using the <code>&lt;img&gt;</code> tag.</p>
+    </div>
+
+    <!-- Audio Example -->
+    <div class="media-section">
+        <h2>Audio</h2>
+        <audio controls>
+            <source src="Bhole Ka Pujari-Downringtone.com.mp3"audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+        <p>This is an audio player using the <code>&lt;audio&gt;</code> tag.</p>
+    </div>
+
+    <!-- Single Video Example -->
+    <div class="media-section">
+        <h2>Video</h2>
+        <video controls width="400">
+            <source src="WIN_20250603_21_26_47_Pro.mp4"video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <p>This is a video player using the <code>&lt;video&gt;</code> tag.</p>
+    </div>
+
+</body>
+</html>
